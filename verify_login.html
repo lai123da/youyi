@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/iconfont.css">
+  <link rel="stylesheet" href="./css/verify_login.css"> <!-- Link to the new CSS file -->
+  <title>手机验证码登录</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <a href="./login.html" class="back">&lt;</a>
+      <div class="title">手机验证码登录</div>
+      <a href="./register.html" class="switch-login">注册</a>
+    </div>
+
+    <div class="form">
+      <div class="input-group">
+        <input type="text" placeholder="请输入手机号" value="18332566962">
+      </div>
+      <div class="input-group verification-code-group">
+        <input type="text" placeholder="请输入短信验证码">
+        <span class="get-code">59 s后重新获取</span>
+      </div>
+
+      <div class="agreement">
+        <input type="checkbox" id="agreement">
+        <label for="agreement">我已同意 <a href="#">用户协议</a> 及 <a href="#">隐私协议</a></label>
+      </div>
+      <a href="./home.html">
+        <button class="login-button">登录</button>
+      </a>
+
+    </div>
+
+    <div class="third-party">
+      <div class="divider">
+        <span>第三方登录</span>
+      </div>
+      <div class="icons">
+        <a href="bind_phone.html" class="icon-item">
+          <img src="./images/qq.png" alt="QQ登录">
+        </a>
+        <a href="bind_phone.html" class="icon-item">
+          <img src="./images/wechat.png" alt="微信登录">
+        </a>
+        <a href="./bind_phone.html" class="icon-item">
+          <img src="./images/aliplay.jpg" alt="支付宝登录">
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

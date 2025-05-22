@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>密码登录</title>
+  <link rel="stylesheet" href="./css/login.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <span class="back">&lt;</span>
+      <a href="register.html" class="switch-login">注册</a>
+    </div>
+    <div class="title">
+      <span class="pslogin">密码登录</span>
+      <a href="./verify_login.html" class="phone-login">手机验证码登录 ></a>
+    </div>
+
+    <div class="form">
+      <div class="input-group">
+        <input type="text" placeholder="请输入手机号码">
+      </div>
+      <div class="input-group">
+        <input type="password" placeholder="请输入密码">
+        <span class="eye-icon">👁</span>
+      </div>
+
+      <div class="agreement">
+        <label class="checkbox">
+          <input type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <span class="text">我已同意 <a href="#">用户协议</a> 及 <a href="#">隐私协议</a></span>
+      </div>
+      <a href="./home.html">
+        <button class="login-btn">登录</button>
+      </a>
+
+
+      <div class="forgot-password">
+        <a href="./forgot_password.html">忘记密码？</a>
+      </div>
+    </div>
+
+    <div class="third-party">
+      <div class="divider">
+        <span>第三方登录</span>
+      </div>
+      <div class="icons">
+        <a href="./bind_phone.html" class="icon-item">
+          <img src="./images/qq.png" alt="QQ登录">
+        </a>
+        <a href="./bind_phone.html" class="icon-item">
+          <img src="./images/wechat.png" alt="微信登录">
+        </a>
+        <a href="./bind_phone.html" class="icon-item">
+          <img src="./images/aliplay.jpg" alt="支付宝登录">
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

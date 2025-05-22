@@ -1,0 +1,70 @@
+/* 引入 common.css 中的变量 */
+:root {
+  --primary-color: #00c1a1;
+  --text-color: #333;
+  --placeholder-color: #ccc;
+  --border-color: #eee;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: #fff;
+}
+
+.container {
+  width: calc(100% - calc(30vw / 3.75)); /* Adjust padding */
+  padding: calc(15vw / 3.75); /* Adjust padding */
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: calc(20vw / 3.75); /* Adjust margin */
+  position: relative;
+  height: calc(44vw / 3.75); /* Add height */
+}
+
+.header .back {
+  font-size: calc(20vw / 3.75);
+  color: var(--text-color);
+  text-decoration: none; /* Ensure no underline */
+  position: absolute; /* Position back button */
+  left: 0;
+}
+
+.header .title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: calc(18vw / 3.75);
+  color: var(--text-color);
+  font-weight: bold; /* Match image */
+}
+
+.agreement-content {
+  padding: calc(20vw / 3.75);
+  /* Add padding to separate from header */
+}
+
+.agreement-content h2 {
+  font-size: calc(20vw / 3.75);
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: calc(20vw / 3.75);
+}
+
+.agreement-content h3 {
+  font-size: calc(16vw / 3.75);
+  font-weight: bold;
+  margin-top: calc(15vw / 3.75);
+  margin-bottom: calc(10vw / 3.75);
+}
+
+.agreement-content p {
+  font-size: calc(14vw / 3.75);
+  line-height: 1.6;
+  margin-bottom: calc(10vw / 3.75);
+  color: #333;
+}

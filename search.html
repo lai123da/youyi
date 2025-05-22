@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>搜索</title>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/iconfont.css"> <!-- 假设使用 iconfont 作为图标库 -->
+  <link rel="stylesheet" href="./css/search.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="search-header">
+      <div class="search-input-wrapper">
+        <i class="iconfont icon-search"></i> <!-- 搜索图标 -->
+        <input type="text" id="searchInput" placeholder="搜一搜: 疾病/症状/医生/健康知识">
+      </div>
+      <span class="cancel-btn" id="cancelBtn">取消</span>
+    </div>
+
+    <div class="search-section history-section">
+      <div class="section-header">
+        <span class="section-title">历史搜索</span>
+        <i class="iconfont icon-delete trash-icon" id="historyTrashIcon"></i> <!-- 垃圾桶图标 -->
+        <span class="edit-history" id="editHistoryBtn" style="display: none;">全部删除</span> <!-- 编辑状态下的文本 -->
+        <span class="done-editing" id="doneEditingBtn" style="display: none;">完成</span> <!-- 编辑状态下的文本 -->
+      </div>
+      <div class="tags-container" id="historyTags">
+        <!-- 历史搜索标签将通过JS添加 -->
+      </div>
+    </div>
+
+    <div class="search-section hot-section">
+      <div class="section-header">
+        <span class="section-title">热门搜索</span>
+      </div>
+      <div class="tags-container" id="hotTags">
+        <!-- 热门搜索标签 (示例) -->
+        <span class="tag">近视矫正手术</span>
+        <span class="tag">高血压</span>
+        <span class="tag">去皱</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/search.js"></script> <!-- Link to the new JS file -->
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+/* 引入 common.css 中的变量 */
+:root {
+  --primary-color: #00c1a1;
+  --text-color: #333;
+  --placeholder-color: #ccc;
+  --border-color: #eee;
+  --tag-bg-color: #f7f7f7; /* 标签背景色 */
+  --tag-border-color: #eee; /* 标签边框色 */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: #fff;
+}
+
+.container {
+  width: 100%;
+  padding: 0 calc(15vw / 3.75); /* 左右内边距 */
+  box-sizing: border-box; /* 包含内边距在宽度内 */
+}
+
+.search-header {
+  display: flex;
+  align-items: center;
+  padding: calc(10vw / 3.75) 0; /* 上下内边距 */
+  margin-bottom: calc(20vw / 3.75); /* 底部外边距 */
+}
+
+.search-input-wrapper {
+  flex-grow: 1; /* 占据剩余空间 */
+  display: flex;
+  align-items: center;
+  background-color: var(--tag-bg-color); /* 浅灰色背景 */
+  border-radius: calc(18vw / 3.75); /* 圆角 */
+  padding: calc(8vw / 3.75) calc(15vw / 3.75); /* 内边距 */
+  margin-right: calc(10vw / 3.75); /* 与取消按钮的间距 */
+}
+
+.search-input-wrapper .iconfont {
+  font-size: calc(16vw / 3.75);
+  color: #999; /* 图标颜色 */
+  margin-right: calc(5vw / 3.75); /* 图标与输入框的间距 */
+}
+
+.search-input-wrapper input {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: calc(14vw / 3.75);
+  color: var(--text-color);
+}
+
+.search-input-wrapper input::placeholder {
+  color: var(--placeholder-color);
+}
+
+.cancel-btn {
+  font-size: calc(14vw / 3.75);
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.search-section {
+  margin-bottom: calc(20vw / 3.75); /* Section 间距 */
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: calc(15vw / 3.75); /* Header 与 tags 间距 */
+}
+
+.section-title {
+  font-size: calc(16vw / 3.75);
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.trash-icon {
+  font-size: calc(16vw / 3.75);
+  color: #999;
+  cursor: pointer;
+}
+
+.edit-history,
+.done-editing {
+  font-size: calc(14vw / 3.75);
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+.tags-container {
+  display: flex;
+  flex-wrap: wrap; /* 允许换行 */
+  gap: calc(10vw / 3.75); /* 标签之间的间距 */
+}
+
+.tag {
+  background-color: var(--tag-bg-color);
+  border: 1px solid var(--tag-border-color);
+  border-radius: calc(15vw / 3.75); /* 圆角 */
+  padding: calc(5vw / 3.75) calc(12vw / 3.75); /* 内边距 */
+  font-size: calc(14vw / 3.75);
+  color: var(--text-color);
+  cursor: pointer;
+  position: relative; /* 用于定位删除图标 */
+}
+
+.tag .delete-icon {
+  position: absolute;
+  top: calc(-5vw / 3.75); /* 调整位置 */
+  right: calc(-5vw / 3.75); /* 调整位置 */
+  font-size: calc(12vw / 3.75);
+  color: #999; /* 删除图标颜色 */
+  background-color: #fff; /* 白色背景 */
+  border-radius: 50%;
+  padding: calc(2vw / 3.75);
+  cursor: pointer;
+  display: none; /* 默认隐藏 */
+}
+
+/* 编辑状态下显示删除图标 */
+.editing .tag .delete-icon {
+  display: block;
+}
+
+/* 热门搜索标签的特殊样式 (如果需要) */
+.hot-section .tag {
+  /* 可以添加热门搜索特有的样式 */
+}
+
+/* 热门搜索中被选中的标签样式 (如果需要) */
+.hot-section .tag.selected {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
