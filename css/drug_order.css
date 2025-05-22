@@ -1,0 +1,238 @@
+/* 引入 common.css 中的变量 */
+:root {
+  --primary-color: #2cb5a5; /* 主题绿色 */
+  --text-color: #333;
+  --placeholder-color: #ccc;
+  --border-color: #eee;
+  --status-pending-payment-color: #ff9800; /* 待支付状态颜色 */
+  --status-pending-shipment-color: #999; /* 待发货状态颜色 */
+  /* 根据需要添加其他状态颜色 */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: #f6f7f9; /* 页面背景色 */
+}
+
+.container {
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: calc(44vw / 3.75); /* 留出顶部 header 的空间 */
+
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(44vw / 3.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* 顶部阴影 */
+    z-index: 10; /* 确保在内容上方 */
+
+    .back {
+      position: absolute;
+      left: calc(15vw / 3.75);
+      font-size: calc(20vw / 3.75);
+      color: var(--text-color);
+      text-decoration: none;
+    }
+
+    .title {
+      font-size: calc(18vw / 3.75);
+      color: var(--text-color);
+      font-weight: bold;
+    }
+  }
+
+  .order-tabs {
+    width: 100%;
+    background-color: #fff;
+    margin-bottom: calc(10vw / 3.75); /* 与订单列表的间距 */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* 阴影 */
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: space-around; /* 均匀分布 */
+      align-items: center;
+      height: calc(44vw / 3.75);
+
+      li {
+        flex: 1; /* 每个tab占据等宽空间 */
+        text-align: center;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        a {
+          text-decoration: none;
+          color: #666; /* 默认颜色 */
+          font-size: calc(14vw / 3.75);
+          font-weight: normal;
+          padding: 0 calc(10vw / 3.75); /* 增加点击区域 */
+          height: 100%;
+          display: flex;
+          align-items: center;
+        }
+
+        &.active a {
+          color: var(--primary-color); /* 选中颜色 */
+          font-weight: bold;
+        }
+
+        &.active::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: calc(20vw / 3.75); /* 下划线宽度 */
+          height: calc(2vw / 3.75); /* 下划线高度 */
+          background-color: var(--primary-color); /* 下划线颜色 */
+          border-radius: calc(1vw / 3.75);
+        }
+      }
+    }
+  }
+
+  .order-list {
+    padding: 0 calc(15vw / 3.75); /* 左右内边距 */
+
+    .order-item {
+      background-color: #fff;
+      border-radius: calc(8vw / 3.75);
+      padding: calc(15vw / 3.75);
+      margin-bottom: calc(10vw / 3.75); /* 订单项之间的间距 */
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* 阴影 */
+
+      .order-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: calc(15vw / 3.75);
+        font-size: calc(13vw / 3.75);
+        color: #666;
+
+        .order-status {
+          font-weight: bold;
+
+          &.status-pending-payment {
+            color: var(--status-pending-payment-color);
+          }
+
+          &.status-pending-shipment {
+            color: var(--status-pending-shipment-color);
+          }
+          /* 根据需要添加其他状态的样式 */
+        }
+      }
+
+      .order-details {
+        margin-bottom: calc(15vw / 3.75);
+
+        .product-item {
+          display: flex;
+          align-items: center;
+          margin-bottom: calc(10vw / 3.75); /* 商品项之间的间距 */
+
+          &:last-child {
+            margin-bottom: 0; /* 最后一个商品项没有底部间距 */
+          }
+
+          .product-image {
+            width: calc(60vw / 3.75); /* 商品图片宽度 */
+            height: calc(60vw / 3.75); /* 商品图片高度 */
+            background-color: #eee; /* 占位符背景色 */
+            border-radius: calc(4vw / 3.75);
+            margin-right: calc(10vw / 3.75);
+            flex-shrink: 0; /* 防止图片缩小 */
+          }
+
+          .product-info {
+            flex-grow: 1; /* 占据剩余空间 */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .product-name {
+              font-size: calc(14vw / 3.75);
+              color: #333;
+              margin-bottom: calc(4vw / 3.75);
+            }
+
+            .product-meta {
+              font-size: calc(12vw / 3.75);
+              color: #999;
+              margin-bottom: calc(4vw / 3.75);
+
+              .prescription-tag {
+                display: inline-block;
+                background-color: #e0f7fa; /* 浅绿色背景 */
+                color: #00796b; /* 深绿色文字 */
+                padding: calc(2vw / 3.75) calc(5vw / 3.75);
+                border-radius: calc(3vw / 3.75);
+                font-size: calc(10vw / 3.75);
+                margin-right: calc(5vw / 3.75);
+              }
+            }
+
+            .product-price {
+              font-size: calc(14vw / 3.75);
+              color: #ff0000; /* 价格颜色 */
+              font-weight: bold;
+            }
+          }
+
+          .product-quantity {
+            font-size: calc(14vw / 3.75);
+            color: #333;
+            margin-left: calc(10vw / 3.75);
+            flex-shrink: 0; /* 防止数量缩小 */
+          }
+        }
+      }
+
+      .order-summary {
+        text-align: right;
+        font-size: calc(13vw / 3.75);
+        color: #666;
+        margin-bottom: calc(15vw / 3.75);
+      }
+
+      .order-actions {
+        display: flex;
+        justify-content: flex-end; /* 按钮靠右对齐 */
+
+        .btn {
+          padding: calc(8vw / 3.75) calc(15vw / 3.75);
+          border: none;
+          border-radius: calc(18vw / 3.75);
+          font-size: calc(13vw / 3.75);
+          cursor: pointer;
+          margin-left: calc(10vw / 3.75); /* 按钮之间的间距 */
+
+          &.btn-cancel {
+            background-color: #fff;
+            color: #666;
+            border: 1px solid #ccc;
+          }
+
+          &.btn-primary {
+            background-color: var(--primary-color);
+            color: #fff;
+            border: 1px solid var(--primary-color);
+          }
+        }
+      }
+    }
+  }
+}

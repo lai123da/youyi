@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>药品订单</title>
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/drug_order.css">
+  <!-- 引入 iconfont 字体图标，如果需要的话 -->
+  <!-- <link rel="stylesheet" href="./css/iconfont.css"> -->
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <a href="./mine.html" class="back">&lt;</a> <!-- 返回箭头 -->
+      <div class="title">药品订单</div>
+    </div>
+
+    <div class="order-tabs">
+      <ul>
+        <li class="active"><a href="#">全部</a></li>
+        <li><a href="#">待支付</a></li>
+        <li><a href="#">待发货</a></li>
+        <li><a href="#">待收货</a></li>
+        <li><a href="#">已完成</a></li>
+      </ul>
+    </div>
+
+    <div class="order-list">
+      <!-- 待支付订单示例 -->
+      <div class="order-item">
+        <div class="order-header">
+          <span class="order-number">订单编号 202201127465</span>
+          <span class="order-status status-pending-payment">待支付</span>
+        </div>
+        <div class="order-details">
+          <div class="product-item">
+            <div class="product-image"></div> <!-- 商品图片占位符 -->
+            <div class="product-info">
+              <div class="product-name">优赛明 维生素E乳</div>
+              <div class="product-meta">
+                <span class="prescription-tag">处方药</span>
+                <span class="volume">85ml</span>
+              </div>
+              <div class="product-price">¥ 25.00</div>
+            </div>
+            <div class="product-quantity">x1</div>
+          </div>
+          <div class="product-item">
+            <div class="product-image"></div> <!-- 商品图片占位符 -->
+            <div class="product-info">
+              <div class="product-name">优赛明 维生素E乳</div>
+              <div class="product-meta">
+                <span class="prescription-tag">处方药</span>
+                <span class="volume">85ml</span>
+              </div>
+              <div class="product-price">¥ 25.00</div>
+            </div>
+            <div class="product-quantity">x1</div>
+          </div>
+        </div>
+        <div class="order-summary">
+          共2件商品 合计:¥49.00 (运费¥0.00)
+        </div>
+        <div class="order-actions">
+          <button class="btn btn-cancel">取消订单</button>
+          <button class="btn btn-primary">继续支付</button>
+        </div>
+      </div>
+
+      <!-- 待发货订单示例 -->
+      <div class="order-item">
+        <div class="order-header">
+          <span class="order-number">订单编号 202201127465</span>
+          <span class="order-status status-pending-shipment">待发货</span>
+        </div>
+        <div class="order-details">
+          <div class="product-item">
+            <div class="product-image"></div> <!-- 商品图片占位符 -->
+            <div class="product-info">
+              <div class="product-name">优赛明 维生素E乳</div>
+              <div class="product-meta">
+                <span class="prescription-tag">处方药</span>
+                <span class="volume">85ml</span>
+              </div>
+              <div class="product-price">¥ 25.00</div>
+            </div>
+            <div class="product-quantity">x1</div>
+          </div>
+          <div class="product-item">
+            <div class="product-image"></div> <!-- 商品图片占位符 -->
+            <div class="product-info">
+              <div class="product-name">优赛明 维生素E乳</div>
+              <div class="product-meta">
+                <span class="prescription-tag">处方药</span>
+                <span class="volume">85ml</span>
+              </div>
+              <div class="product-price">¥ 25.00</div>
+            </div>
+            <div class="product-quantity">x1</div>
+          </div>
+        </div>
+        <div class="order-summary">
+          共2件商品 合计:¥49.00 (运费¥0.00)
+        </div>
+        <!-- 待发货状态下可能没有按钮，或者有其他按钮 -->
+        <!-- <div class="order-actions">
+                    <button class="btn">查看物流</button>
+                </div> -->
+      </div>
+
+      <!-- 可以根据需要添加更多订单状态的示例 -->
+
+    </div>
+  </div>
+</body>
+
+</html>

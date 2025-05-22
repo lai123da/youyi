@@ -3,10 +3,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const cancelBtn = document.getElementById('cancelBtn');
   const historyTagsContainer = document.getElementById('historyTags');
   const hotTagsContainer = document.getElementById('hotTags');
-  const historyTrashIcon = document.getElementById('historyTrashIcon');
+  // 移除 historyTrashIcon 变量
+  // const historyTrashIcon = document.getElementById('historyTrashIcon');
   const editHistoryBtn = document.getElementById('editHistoryBtn');
   const doneEditingBtn = document.getElementById('doneEditingBtn');
   const historySection = document.querySelector('.history-section');
+  const historySectionHeader = historySection.querySelector('.section-header'); // 获取历史搜索头部元素
 
   // 从 localStorage 加载历史搜索记录
   let searchHistory = JSON.parse(localStorage.getItem('searchHistory')) || [];
@@ -16,41 +18,37 @@ document.addEventListener('DOMContentLoaded', () => {
     historyTagsContainer.innerHTML = ''; // 清空现有标签
     if (searchHistory.length === 0) {
       historyTagsContainer.innerHTML = '<p>暂无历史搜索记录</p>';
-      historyTrashIcon.style.display = 'none'; // 没有历史记录时隐藏垃圾桶
-      editHistoryBtn.style.display = 'none';
-      doneEditingBtn.style.display = 'none';
-      historySection.classList.remove('editing'); // 退出编辑状态
-      return;
+      // 没有历史记录时隐藏头部
+      historySectionHeader.style.display = 'none';
     } else {
-      historyTrashIcon.style.display = 'block'; // 有历史记录时显示垃圾桶
-    }
+      // 有历史记录时显示头部
+      historySectionHeader.style.display = 'flex'; // 假设头部是 flex 布局
 
+      searchHistory.forEach((item, index) => {
+        const tagSpan = document.createElement('span');
+        tagSpan.classList.add('tag');
+        tagSpan.textContent = item;
 
-    searchHistory.forEach((item, index) => {
-      const tagSpan = document.createElement('span');
-      tagSpan.classList.add('tag');
-      tagSpan.textContent = item;
+        // 添加删除图标
+        const deleteIcon = document.createElement('i');
+        deleteIcon.classList.add('iconfont', 'icon-delete-icon'); // 使用 iconfont 的关闭图标
+        deleteIcon.addEventListener('click', (event) => {
+          event.stopPropagation(); // 阻止事件冒泡到标签本身
+          deleteHistoryItem(index);
+        });
+        tagSpan.appendChild(deleteIcon);
 
-      // 添加删除图标
-      const deleteIcon = document.createElement('i');
-      deleteIcon.classList.add('iconfont', 'icon-close', 'delete-icon'); // 使用 iconfont 的关闭图标
-      deleteIcon.addEventListener('click', (event) => {
-        event.stopPropagation(); // 阻止事件冒泡到标签本身
-        deleteHistoryItem(index);
-      });
-      tagSpan.appendChild(deleteIcon);
-
-      // 点击历史标签进行搜索
-      tagSpan.addEventListener('click', () => {
-        if (!historySection.classList.contains('editing')) {
+        // 点击历史标签进行搜索
+        // 移除编辑模式判断，因为删除图标始终可见
+        tagSpan.addEventListener('click', () => {
           searchInput.value = item;
           // 这里可以添加执行搜索的逻辑
           console.log('搜索历史:', item);
-        }
-      });
+        });
 
-      historyTagsContainer.appendChild(tagSpan);
-    });
+        historyTagsContainer.appendChild(tagSpan);
+      });
+    }
   }
 
   // 添加搜索记录
@@ -80,21 +78,20 @@ document.addEventListener('DOMContentLoaded', () => {
     renderHistory(); // 重新渲染
   }
 
-  // 进入编辑状态
-  function enterEditingMode() {
-    historySection.classList.add('editing');
-    historyTrashIcon.style.display = 'none';
-    editHistoryBtn.style.display = 'none';
-    doneEditingBtn.style.display = 'inline'; // 显示完成按钮
-  }
+  // 移除进入/退出编辑状态的函数
+  // function enterEditingMode() {
+  //   historySection.classList.add('editing');
+  //   historyTrashIcon.style.display = 'none';
+  //   editHistoryBtn.style.display = 'inline'; // 显示全部删除按钮
+  //   doneEditingBtn.style.display = 'inline'; // 显示完成按钮
+  // }
 
-  // 退出编辑状态
-  function exitEditingMode() {
-    historySection.classList.remove('editing');
-    historyTrashIcon.style.display = 'block';
-    editHistoryBtn.style.display = 'none';
-    doneEditingBtn.style.display = 'none';
-  }
+  // function exitEditingMode() {
+  //   historySection.classList.remove('editing');
+  //   historyTrashIcon.style.display = 'block';
+  //   editHistoryBtn.style.display = 'none';
+  //   doneEditingBtn.style.display = 'none';
+  // }
 
   // 事件监听
   // 搜索框输入事件 (可选：实时搜索建议)
@@ -124,22 +121,22 @@ document.addEventListener('DOMContentLoaded', () => {
     searchInput.value = '';
   });
 
-  // 垃圾桶图标点击事件 (进入编辑状态)
-  historyTrashIcon.addEventListener('click', enterEditingMode);
+  // 移除垃圾桶图标点击事件
+  // historyTrashIcon.addEventListener('click', enterEditingMode);
 
   // 全部删除按钮点击事件
   editHistoryBtn.addEventListener('click', clearHistory);
 
-  // 完成按钮点击事件 (退出编辑状态)
-  doneEditingBtn.addEventListener('click', exitEditingMode);
+  // 移除完成按钮点击事件
+  // doneEditingBtn.addEventListener('click', exitEditingMode);
 
-  // 点击历史搜索区域空白处退出编辑状态
-  historySection.addEventListener('click', (event) => {
-    // 如果点击的不是标签或删除图标，且当前处于编辑状态，则退出编辑
-    if (historySection.classList.contains('editing') && !event.target.closest('.tag')) {
-      exitEditingMode();
-    }
-  });
+  // 移除点击历史搜索区域空白处退出编辑状态的事件
+  // historySection.addEventListener('click', (event) => {
+  //   // 如果点击的不是标签或删除图标，且当前处于编辑状态，则退出编辑
+  //   if (historySection.classList.contains('editing') && !event.target.closest('.tag')) {
+  //     exitEditingMode();
+  //   }
+  // });
 
 
   // 点击热门搜索标签

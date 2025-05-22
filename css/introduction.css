@@ -1,3 +1,13 @@
+/* 引入 common.css 中的变量 */
+:root {
+  --primary-color: #00c1a1;
+  --text-color: #333;
+  --placeholder-color: #ccc;
+  --border-color: #eee;
+  --tag-bg-color: #f7f7f7; /* 标签背景色 */
+  --tag-border-color: #eee; /* 标签边框色 */
+}
+
 body {
   background: url(../images/xiaogu1.jpg) no-repeat center/cover;
 }
@@ -143,12 +153,12 @@ body {
             opacity: 0;
           }
         }
-      }
-      li:hover a {
-        color: #121826;
-      }
-      li:hover .border {
-        opacity: 1;
+        &:hover a {
+          color: #121826;
+        }
+        &:hover .border {
+          opacity: 1;
+        }
       }
     }
   }

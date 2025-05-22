@@ -15,191 +15,191 @@ body {
 .container {
   width: calc(100% - calc(30vw / 3.75)); /* Adjust padding */
   padding: calc(15vw / 3.75); /* Adjust padding */
-}
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: calc(40vw / 3.75);
-  position: relative;
-  height: calc(44vw / 3.75); /* Add height */
-}
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: calc(40vw / 3.75);
+    position: relative;
+    height: calc(44vw / 3.75); /* Add height */
 
-.header .back {
-  font-size: calc(20vw / 3.75);
-  color: var(--text-color);
-  text-decoration: none; /* Ensure no underline */
-}
+    .back {
+      font-size: calc(20vw / 3.75);
+      color: var(--text-color);
+      text-decoration: none; /* Ensure no underline */
+    }
 
-.header .title {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: calc(18vw / 3.75);
-  color: var(--text-color);
-  font-weight: bold; /* Match image */
-}
+    .title {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: calc(18vw / 3.75);
+      color: var(--text-color);
+      font-weight: bold; /* Match image */
+    }
 
-.header .switch-login {
-  color: var(--primary-color);
-  text-decoration: none;
-  font-size: calc(14vw / 3.75);
-}
+    .switch-login {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-size: calc(14vw / 3.75);
+    }
+  }
 
-.form {
-  margin-top: calc(20vw / 3.75); /* Add margin-top */
-}
+  .form {
+    margin-top: calc(20vw / 3.75); /* Add margin-top */
 
-.input-group {
-  position: relative;
-  margin-bottom: calc(20vw / 3.75);
-  border-bottom: 1px solid var(--border-color);
-  display: flex; /* Use flex for alignment */
-  align-items: center; /* Center items vertically */
-}
+    .input-group {
+      position: relative;
+      margin-bottom: calc(20vw / 3.75);
+      border-bottom: 1px solid var(--border-color);
+      display: flex; /* Use flex for alignment */
+      align-items: center; /* Center items vertically */
 
-.input-group input {
-  flex-grow: 1; /* Allow input to take available space */
-  padding: calc(15vw / 3.75) 0;
-  border: none;
-  outline: none;
-  font-size: calc(16vw / 3.75);
-  background: transparent;
-}
+      input {
+        flex-grow: 1; /* Allow input to take available space */
+        padding: calc(15vw / 3.75) 0;
+        border: none;
+        outline: none;
+        font-size: calc(16vw / 3.75);
+        background: transparent;
 
-.input-group input::placeholder {
-  color: var(--placeholder-color);
-}
+        &::placeholder {
+          color: var(--placeholder-color);
+        }
+      }
 
-.input-group .get-code {
-  color: var(--primary-color);
-  font-size: calc(14vw / 3.75);
-  cursor: pointer;
-  margin-left: calc(10vw / 3.75); /* Add some space */
-}
+      .get-code {
+        color: var(--primary-color);
+        font-size: calc(14vw / 3.75);
+        cursor: pointer;
+        margin-left: calc(10vw / 3.75); /* Add some space */
+      }
 
-.input-group .eye-icon {
-  color: var(--placeholder-color);
-  cursor: pointer;
-  margin-left: calc(10vw / 3.75); /* Add some space */
-}
+      .eye-icon {
+        color: var(--placeholder-color);
+        cursor: pointer;
+        margin-left: calc(10vw / 3.75); /* Add some space */
+      }
+    }
+  }
 
-.agreement {
-  display: flex;
-  align-items: center;
-  margin: calc(20vw / 3.75) 0;
-}
+  .agreement {
+    display: flex;
+    align-items: center;
+    margin: calc(20vw / 3.75) 0;
 
-.agreement .checkbox {
-  position: relative;
-  width: calc(16vw / 3.75);
-  height: calc(16vw / 3.75);
-  margin-right: calc(8vw / 3.75);
-}
+    .checkbox {
+      position: relative;
+      width: calc(16vw / 3.75);
+      height: calc(16vw / 3.75);
+      margin-right: calc(8vw / 3.75);
 
-.agreement .checkbox input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
+      input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
 
-.agreement .checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: calc(16vw / 3.75);
-  height: calc(16vw / 3.75);
-  border: 1px solid var(--primary-color);
-  border-radius: 50%;
-}
+        &:checked ~ .checkmark {
+          background-color: var(--primary-color);
 
-.agreement .checkbox input:checked ~ .checkmark {
-  background-color: var(--primary-color);
-}
+          &::after {
+            display: block;
+          }
+        }
+      }
 
-.agreement .checkmark:after {
-  content: '';
-  position: absolute;
-  display: none;
-  left: calc(5vw / 3.75); /* Adjust position */
-  top: calc(2vw / 3.75); /* Adjust position */
-  width: calc(5vw / 3.75); /* Adjust size */
-  height: calc(10vw / 3.75); /* Adjust size */
-  border: solid white;
-  border-width: 0 calc(2vw / 3.75) calc(2vw / 3.75) 0;
-  transform: rotate(45deg);
-}
+      .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: calc(16vw / 3.75);
+        height: calc(16vw / 3.75);
+        border: 1px solid var(--primary-color);
+        border-radius: 50%;
 
-.agreement .checkbox input:checked ~ .checkmark:after {
-  display: block;
-}
+        &::after {
+          content: '';
+          position: absolute;
+          display: none;
+          left: calc(5vw / 3.75); /* Adjust position */
+          top: calc(2vw / 3.75); /* Adjust position */
+          width: calc(5vw / 3.75); /* Adjust size */
+          height: calc(10vw / 3.75); /* Adjust size */
+          border: solid white;
+          border-width: 0 calc(2vw / 3.75) calc(2vw / 3.75) 0;
+          transform: rotate(45deg);
+        }
+      }
+    }
 
-.agreement .text {
-  font-size: calc(14vw / 3.75);
-  color: #666;
-}
+    .text {
+      font-size: calc(14vw / 3.75);
+      color: #666;
 
-.agreement .text a {
-  color: var(--primary-color);
-  text-decoration: none;
-}
+      a {
+        color: var(--primary-color);
+        text-decoration: none;
+      }
+    }
+  }
 
-.register-btn {
-  width: 100%;
-  height: calc(44vw / 3.75);
-  background: var(--primary-color);
-  color: #fff;
-  border: none;
-  border-radius: calc(22vw / 3.75);
-  font-size: calc(16vw / 3.75);
-  margin: calc(20vw / 3.75) 0;
-  cursor: pointer;
-}
+  .register-btn {
+    width: 100%;
+    height: calc(44vw / 3.75);
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: calc(22vw / 3.75);
+    font-size: calc(16vw / 3.75);
+    margin: calc(20vw / 3.75) 0;
+    cursor: pointer;
+  }
 
-.third-party {
-  margin-top: calc(50vw / 3.75);
-  text-align: center;
-}
+  .third-party {
+    margin-top: calc(50vw / 3.75);
+    text-align: center;
 
-.third-party .divider {
-  position: relative;
-  margin-bottom: calc(20vw / 3.75);
-}
+    .divider {
+      position: relative;
+      margin-bottom: calc(20vw / 3.75);
 
-.third-party .divider span {
-  background: #fff;
-  padding: 0 calc(15vw / 3.75);
-  color: #999;
-  font-size: calc(14vw / 3.75);
-  position: relative;
-  z-index: 1;
-}
+      span {
+        background: #fff;
+        padding: 0 calc(15vw / 3.75);
+        color: #999;
+        font-size: calc(14vw / 3.75);
+        position: relative;
+        z-index: 1;
+      }
 
-.third-party .divider:before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: var(--border-color);
-}
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: var(--border-color);
+      }
+    }
 
-.third-party .icons {
-  display: flex;
-  justify-content: center;
-  gap: calc(30vw / 3.75);
-}
+    .icons {
+      display: flex;
+      justify-content: center;
+      gap: calc(30vw / 3.75);
 
-.third-party .icon-item {
-  text-decoration: none;
-}
+      .icon-item {
+        text-decoration: none;
 
-.third-party .icon-item img {
-  width: calc(35vw / 3.75);
-  height: calc(35vw / 3.75);
-  border-radius: 50%;
+        img {
+          width: calc(35vw / 3.75);
+          height: calc(35vw / 3.75);
+          border-radius: 50%;
+        }
+      }
+    }
+  }
 }

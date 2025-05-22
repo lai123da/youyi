@@ -16,154 +16,154 @@ body {
 .container {
   width: calc(100% - calc(30vw / 3.75)); /* Adjust padding */
   padding: calc(15vw / 3.75); /* Adjust padding */
-}
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: calc(40vw / 3.75);
-  position: relative;
-  height: calc(44vw / 3.75); /* Add height */
-}
-
-.header .back {
-  font-size: calc(20vw / 3.75);
-  color: var(--text-color);
-  text-decoration: none; /* Ensure no underline */
-}
-
-.header .title {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: calc(18vw / 3.75);
-  color: var(--text-color);
-  font-weight: bold; /* Match image */
-}
-
-.header .switch-login {
-  color: var(--primary-color);
-  text-decoration: none;
-  font-size: calc(14vw / 3.75);
-}
-
-.form {
-  margin-top: calc(20vw / 3.75); /* Add margin-top */
-}
-
-.input-group {
-  position: relative;
-  margin-bottom: calc(20vw / 3.75);
-  border-bottom: 1px solid var(--border-color);
-  display: flex; /* Use flex for alignment */
-  align-items: center; /* Center items vertically */
-}
-
-.input-group input {
-  flex-grow: 1; /* Allow input to take available space */
-  padding: calc(15vw / 3.75) 0;
-  border: none;
-  outline: none;
-  font-size: calc(16vw / 3.75);
-  color: var(--text-color);
-}
-
-.input-group input::placeholder {
-  color: var(--placeholder-color);
-}
-
-.verification-code-group {
-  justify-content: space-between; /* Space out input and button */
-}
-
-.verification-code-group input {
-  flex-grow: 1; /* Allow input to take available space */
-  margin-right: calc(10vw / 3.75); /* Add some space between input and button */
-}
-
-.verification-code-group .get-code {
-  color: var(--primary-color);
-  font-size: calc(14vw / 3.75);
-  cursor: pointer; /* Indicate it's clickable */
-}
-
-.agreement {
-  margin-top: calc(20vw / 3.75);
-  margin-bottom: calc(30vw / 3.75);
-  font-size: calc(12vw / 3.75);
-  color: #666;
-  display: flex;
-  align-items: center;
-}
-
-.agreement input[type='checkbox'] {
-  margin-right: calc(5vw / 3.75);
-}
-
-.agreement a {
-  color: var(--primary-color);
-  text-decoration: none;
-}
-
-.login-button {
-  width: 100%;
-  padding: calc(15vw / 3.75);
-  background-color: #e0e0e0; /* Greyed out as in the image */
-  color: #fff;
-  border: none;
-  border-radius: calc(22vw / 3.75);
-  font-size: calc(16vw / 3.75);
-  cursor: not-allowed; /* Indicate it's not active */
-  text-align: center;
-}
-
-/* Active state for the button (optional, if you want to show how it would look when active) */
-/* .login-button.active {
-  background-color: var(--primary-color);
-  cursor: pointer;
-} */
-
-.third-party {
-  margin-top: calc(50vw / 3.75);
-  text-align: center;
-
-  .divider {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: calc(40vw / 3.75);
     position: relative;
-    margin-bottom: calc(20 / 3.75 * 1vw);
+    height: calc(44vw / 3.75); /* Add height */
 
-    span {
-      background: #fff;
-      padding: 0 calc(15 / 3.75 * 1vw);
-      color: #999;
-      font-size: calc(14 / 3.75 * 1vw);
-      position: relative;
-      z-index: 1;
+    .back {
+      font-size: calc(20vw / 3.75);
+      color: var(--text-color);
+      text-decoration: none; /* Ensure no underline */
     }
 
-    &:before {
-      content: '';
+    .title {
       position: absolute;
-      top: 50%;
-      left: 0;
-      right: 0;
-      height: 1px; /* Keep border 1px */
-      background: var(--border-color);
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: calc(18vw / 3.75);
+      color: var(--text-color);
+      font-weight: bold; /* Match image */
+    }
+
+    .switch-login {
+      color: var(--primary-color);
+      text-decoration: none;
+      font-size: calc(14vw / 3.75);
     }
   }
 
-  .icons {
+  .form {
+    margin-top: calc(20vw / 3.75); /* Add margin-top */
+
+    .input-group {
+      position: relative;
+      margin-bottom: calc(20vw / 3.75);
+      border-bottom: 1px solid var(--border-color);
+      display: flex; /* Use flex for alignment */
+      align-items: center; /* Center items vertically */
+
+      input {
+        flex-grow: 1; /* Allow input to take available space */
+        padding: calc(15vw / 3.75) 0;
+        border: none;
+        outline: none;
+        font-size: calc(16vw / 3.75);
+        color: var(--text-color);
+
+        &::placeholder {
+          color: var(--placeholder-color);
+        }
+      }
+    }
+
+    .verification-code-group {
+      justify-content: space-between; /* Space out input and button */
+
+      input {
+        flex-grow: 1; /* Allow input to take available space */
+        margin-right: calc(10vw / 3.75); /* Add some space between input and button */
+      }
+
+      .get-code {
+        color: var(--primary-color);
+        font-size: calc(14vw / 3.75);
+        cursor: pointer; /* Indicate it's clickable */
+      }
+    }
+  }
+
+  .agreement {
+    margin-top: calc(20vw / 3.75);
+    margin-bottom: calc(30vw / 3.75);
+    font-size: calc(12vw / 3.75);
+    color: #666;
     display: flex;
-    justify-content: center;
-    gap: calc(30 / 3.75 * 1vw);
+    align-items: center;
 
-    .icon-item {
+    input[type='checkbox'] {
+      margin-right: calc(5vw / 3.75);
+    }
+
+    a {
+      color: var(--primary-color);
       text-decoration: none;
+    }
+  }
 
-      img {
-        width: calc(35 / 3.75 * 1vw);
-        height: calc(35 / 3.75 * 1vw);
-        border-radius: 50%;
+  .login-button {
+    width: 100%;
+    padding: calc(15vw / 3.75);
+    background-color: #e0e0e0; /* Greyed out as in the image */
+    color: #fff;
+    border: none;
+    border-radius: calc(22vw / 3.75);
+    font-size: calc(16vw / 3.75);
+    cursor: not-allowed; /* Indicate it's not active */
+    text-align: center;
+
+    /* Active state for the button (optional, if you want to show how it would look when active) */
+    /* &.active {
+      background-color: var(--primary-color);
+      cursor: pointer;
+    } */
+  }
+
+  .third-party {
+    margin-top: calc(50vw / 3.75);
+    text-align: center;
+
+    .divider {
+      position: relative;
+      margin-bottom: calc(20 / 3.75 * 1vw);
+
+      span {
+        background: #fff;
+        padding: 0 calc(15 / 3.75 * 1vw);
+        color: #999;
+        font-size: calc(14 / 3.75 * 1vw);
+        position: relative;
+        z-index: 1;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 1px; /* Keep border 1px */
+        background: var(--border-color);
+      }
+    }
+
+    .icons {
+      display: flex;
+      justify-content: center;
+      gap: calc(30 / 3.75 * 1vw);
+
+      .icon-item {
+        text-decoration: none;
+
+        img {
+          width: calc(35 / 3.75 * 1vw);
+          height: calc(35 / 3.75 * 1vw);
+          border-radius: 50%;
+        }
       }
     }
   }
